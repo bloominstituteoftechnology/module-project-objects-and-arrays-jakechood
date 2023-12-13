@@ -19,34 +19,55 @@
     // ❗ Watch the Guided Project to learn proper debugging technique
 
     // 👉 CHALLENGE 1
-    // 🧠 The function buildPeter builds an object of a certain shape and returns it.
-    // 🧠 Example of usage:
-    // buildPeter() // should return { firstName: "Peter", lastName: "Pan", age: 12 }
+    
     function buildPeter() {
-        return({"firstName":"Peter","lastName":"Pan","age":12})
+      // 🧠 The function buildPeter builds an object of a certain shape and returns it.
+      return {firstName:'Peter',lastName:'Pan',age:12}
+
+      // Testing
+      // 🧠 Example of usage:
+      // buildPeter() 
+      // should return { firstName: "Peter", lastName: "Pan", age: 12 }
+    
     }
 
     // 👉 CHALLENGE 2
-    // 🧠 The function buildUser takes three arguments and uses them to build an object and return it.
-    // 🧠 Example of usage:
-    // buildUser("John", "Smith", 30) // should return { firstName: "John", lastName: "Smith", age: 30 }
+    
+    // 🧠 The function buildUser takes three arguments 
     function buildUser(firstName, lastName, age) {
-        return({"firstName":firstName,"lastName":lastName,"age":age})
+      // and uses them to build an object and return it.
+      return({"firstName":firstName,"lastName":lastName,"age":age})
 
-
-
+      // Testing 
+      // 🧠 Example of usage:
+      // console.log('buildUser("John", "Smith", 30) 
+      // should return { firstName: "John", lastName: "Smith", age: 30 }
     }
 
     // 👉 CHALLENGE 3
-    // 🧠 The function deletePrice takes an object as its argument and deletes its "price" property if it exists.
-    // 🧠 If on the other hand there is no "price" property on the object, a "priceless" property with a value of true is added to it.
-    // 🧠 After the modification of the object, it is returned.
+    
+    
+    
     // 🧠 Note that the argument of the function is missing, you must write it.
-    // 🧠 Examples of usage:
-    // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
-    // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-    function deletePrice() {
+    // 🧠 The function deletePrice takes an object as its argument 
+    function deletePrice(item, price) {
+      // and ... if it exists ... 
+      if (deletePrice.price) {
+        // ...deletes its "price" property.
+        delete deletePrice.price 
 
+      // 🧠 If on the other hand there is no "price" property on the object,
+        // a "priceless" property with a value of true is added to it.
+        // 🧠 After the modification of the object, it is returned.
+      }
+      // Testing
+      // 🧠 Examples of usage:
+      
+      // deletePrice({ item: "Tesla Model 3", price: 40000 }) 
+      // should return { item: "Tesla Model 3" }
+
+      // deletePrice({ item: "Kobo Libra 2" }) 
+      // should return { item: "Kobo Libra 2", priceless: true }
     }
 
     // 👉 CHALLENGE 4
