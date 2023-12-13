@@ -18,10 +18,12 @@
     // ❗ Functions are scaffolded for you, but some of them are missing their parameters
     // ❗ Watch the Guided Project to learn proper debugging technique
 
+
+
     // 👉 CHALLENGE 1
-    
+    // 🧠 The function buildPeter...
     function buildPeter() {
-      // 🧠 The function buildPeter builds an object of a certain shape and returns it.
+       // ...builds an object of a certain shape and returns it.
       return {firstName:'Peter',lastName:'Pan',age:12}
 
       // Testing
@@ -31,8 +33,9 @@
     
     }
 
+
+
     // 👉 CHALLENGE 2
-    
     // 🧠 The function buildUser takes three arguments 
     function buildUser(firstName, lastName, age) {
       // and uses them to build an object and return it.
@@ -43,23 +46,32 @@
       // console.log('buildUser("John", "Smith", 30) 
       // should return { firstName: "John", lastName: "Smith", age: 30 }
     }
+    
 
     // 👉 CHALLENGE 3
-    
-    
-    
     // 🧠 Note that the argument of the function is missing, you must write it.
     // 🧠 The function deletePrice takes an object as its argument 
-    function deletePrice(item, price) {
-      // and ... if it exists ... 
-      if (deletePrice.price) {
+    function deletePrice({item}) {
+      
+      // and ... if [price] exists ... 
+      if ((deletePrice.price || deletePrice.price != 0 ||
+      deletePrice.price != undefined)) {
         // ...deletes its "price" property.
         delete deletePrice.price 
-
+        return({'item':item})
       // 🧠 If on the other hand there is no "price" property on the object,
         // a "priceless" property with a value of true is added to it.
-        // 🧠 After the modification of the object, it is returned.
-      }
+      
+      } if (deletePrice.price === 0 ||
+        !deletePrice.price || 
+        deletePrice.price === undefined)
+        {
+          let priceless = deletePrice[deletePrice.length] = true
+          priceless = true
+          // 🧠 After the modification of the object, it is returned. 
+          return({'item':item,'priceless':priceless})
+        }
+        
       // Testing
       // 🧠 Examples of usage:
       
@@ -70,24 +82,48 @@
       // should return { item: "Kobo Libra 2", priceless: true }
     }
 
+
+
     // 👉 CHALLENGE 4
-    // 🧠 The function evenList takes an array as its argument and returns true if the array has an even number of elements, false otherwise.
+    // 🧠 The function evenList takes an array as its argument 
+    // and returns true if the array has an even number of elements
+    // false otherwise.
     // 🧠 Note that the argument of the function is missing, you must write it.
     // 🧠 Examples of usage:
     // evenList(['a']) // should return false
     // evenList(['a', 'b']) // should return true
-    function evenList(arr) {
-
+    function evenList(arg) {
+      let isOdd = arg.length % 2 !== 0
+      let isEven = arg.length % 2 === 0
+      if (isEven) {
+        return true
+      } else {return false}
+      
     }
+
+
 
     // 👉 CHALLENGE 5
     // 🧠 The function firstOrLast takes an array as the first argument, and a Boolean as the second.
-    // 🧠 If the Boolean is true, the function returns the first element of the array, otherwise the last one.
-    // 🧠 Examples of usage:
-    // firstOrLast(['a', 'b'], true) // should return 'a'
-    // firstOrLast(['a', 'b'], false) // should return 'b'
-    function firstOrLast() {
+    function firstOrLast(arr, Boolean) {
+       // 'last' will be the last item in Array 'arr'
+      let last = arr[arr.length - 1]
+      // 🧠 If the Boolean is true, 
+      if (Boolean === true) {
+        // the function returns the first element of the array...
+        return(arr[0])
+      } 
+      // otherwise the last one.
+      else return(last)
 
+
+      //Testing 
+      // 🧠 Examples of usage:
+      // firstOrLast(['a', 'b'], true) 
+      // should return 'a'
+      
+      // firstOrLast(['a', 'b'], false) 
+      // should return 'b'
     }
 
     // 👉 CHALLENGE 6
@@ -97,6 +133,7 @@
     // pushElement([], 1) // should return [1]
     // pushElement(['a', 'b'], 'c') // should return ['a', 'b', 'c']
     function pushElement() {
+      
 
     }
 
