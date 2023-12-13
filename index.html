@@ -150,14 +150,19 @@
     // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
+    function splice(arg) {
+      delete arg
+    }
     function stripX(string) {
       let result = []
       let split = string.split('')
       for (let index in split) {
         let char = split[index]
-        for ((char = 'x' || char === 'X') {
-          delete(split[index])
-      }
+        for (char in split) {
+          if (char = 'x' || char === 'X') {
+          delete(char[split[index]])
+          }
+        }
         string = split.join('')
       } 
         return string
