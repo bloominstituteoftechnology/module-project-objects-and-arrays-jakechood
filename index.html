@@ -145,27 +145,23 @@
     // stripX("xenomorph") // should return "enomorph"
     // stripX("paradox") // should return "parado"
     // ❗ Important Hints:
-    // 🧠 Inside the function, we should split the given string into an array of characters. Example: "foo".split("") yields ["f", "o", "o"]
-    // 🧠 Do not attempt to manipulate the array of characters. Create an empty result array, and populate it by looping over the characters.
+    
+    
     // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
-    function splice(arg) {
-      delete arg
-    }
+
     function stripX(string) {
-      let result = []
-      let split = string.split('')
-      for (let index in split) {
-        let char = split[index]
-        for (char in split) {
-          if (char = 'x' || char === 'X') {
-          delete(char[split[index]])
-          }
+      // 🧠 Inside the function, we should split the given string into an array of characters. Example: "foo".split("") yields ["f", "o", "o"]
+      let arrString = string.split('')
+      // 🧠 Create an empty result array('Manipulated String = manipString'), and populate it by looping over the characters.
+      let manipString = 
+      for (let char in arrString) {
+        if (char === 'x' || char === 'X') {
+          delete(char)
         }
-        string = split.join('')
-      } 
-        return string
+      }
+      return arrString
     }
 
     // 👉 CHALLENGE 8
