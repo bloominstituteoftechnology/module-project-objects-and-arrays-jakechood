@@ -114,7 +114,7 @@
         return(arr[0])
       } 
       // otherwise the last one.
-      else return(last)
+      else return(arr.at(-1))
 
 
       //Testing 
@@ -132,9 +132,10 @@
     // 🧠 Examples of usage:
     // pushElement([], 1) // should return [1]
     // pushElement(['a', 'b'], 'c') // should return ['a', 'b', 'c']
-    function pushElement() {
-      
 
+    function pushElement(arr, lastEl) {
+      arr[arr.length] = lastEl
+      return(arr)
     }
 
     // 👉 CHALLENGE 7
@@ -149,8 +150,17 @@
     // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
-    function stripX() {
-
+    function stripX(string) {
+      let result = []
+      let split = string.split('')
+      for (let index in split) {
+        let char = split[index]
+        for ((char = 'x' || char === 'X') {
+          delete(split[index])
+      }
+        string = split.join('')
+      } 
+        return string
     }
 
     // 👉 CHALLENGE 8
