@@ -51,26 +51,22 @@
     // 👉 CHALLENGE 3
     // 🧠 Note that the argument of the function is missing, you must write it.
     // 🧠 The function deletePrice takes an object as its argument 
-    function deletePrice({item}) {
+    function deletePrice(item) {
 
       // and ... if [price] exists ... 
-      if ((deletePrice.price || deletePrice.price != 0 ||
-      deletePrice.price != undefined)) {
+      if (item.price != undefined) {
         // ...deletes its "price" property.
-        delete deletePrice.price 
-        return({'item':item})
-      // 🧠 If on the other hand there is no "price" property on the object,
+        delete item.price 
+        return(item)
+      // 🧠 else if there is no "price" property on the object,
         // a "priceless" property with a value of true is added to it.
 
-      } if (deletePrice.price === 0 ||
-        !deletePrice.price || 
-        deletePrice.price === undefined)
-        {
-          let priceless = deletePrice[deletePrice.length] = true
-          priceless = true
+      } else {
+          item.priceless = true
           // 🧠 After the modification of the object, it is returned. 
-          return({'item':item,'priceless':priceless})
+         
         }
+        return item
 
       // Testing
       // 🧠 Examples of usage:
@@ -139,33 +135,41 @@
     }
 
     // 👉 CHALLENGE 7
-    // 🧠 The function stripX takes a string as its argument.
+    
     // 🧠 The function strips any occurrences of the letter "x" from the string and returns the resulting string.
-    // 🧠 Examples of usage:
-    // stripX("xenomorph") // should return "enomorph"
-    // stripX("paradox") // should return "parado"
+    
     // ❗ Important Hints:
 
 
-    // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
+    
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
-    // 🧠 Do not forget to return your rejoined string!
+    
 
+    // 🧠 The function stripX takes a string as its argument.
     function stripX(string) {
-      // 🧠 Inside the function, we should split the given string into an array of characters. Example: "foo".split("") yields ["f", "o", "o"]
-      let arrString = string.split('')
-      // 🧠 Create an empty result array('Manipulated String = manipString'), and populate it by looping over the characters.
-      let manipString = 
-      for (let char in arrString) {
-        if (char === 'x' || char === 'X') {
-          delete(char)
-        }
-      }
-      return arrString
+        let newString = []
+        // 🧠 Inside the function, we should split the given string into an array of characters. Example: "foo".split("") yields ["f", "o", "o"]
+        // 🧠 Create an empty result array('Manipulated String = manipString') 
+        let manipString = string.split('')
+        // and populate it by looping over the characters.
+        for (let index in manipString) {
+            let char = manipString[index]
+            // 🧠 The function strips any occurrences of the letter "x" from the string
+            if (char != 'x') {
+            newString[newString.length] = char
+            }
+            //and returns the resulting string
+            // 🧠 Do not forget to return your rejoined string!
+        } 
+        // Testing:
+        // 🧠 Examples of usage:
+            // stripX("xenomorph") // should return "enomorph"
+            // stripX("paradox") // should return "parado"
+      return newString.join('')
     }
 
     // 👉 CHALLENGE 8
-    // 🧠 The function stripChar takes a string as its first argument and a character as its second argument.
+    
     // 🧠 The function strips any occurrences of the given character from the string and returns the resulting string.
     // 🧠 Examples of usage:
     // stripChar("xenomorph", "x") // should return "enomorph"
@@ -173,8 +177,18 @@
     // ❗ Important Notes:
     // 🧠 Try to solve this problem without looking at how you solved the previous one.
     // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
-    function stripChar() {
 
+    // 🧠 The function stripChar takes a string as its first argument and a character as its second argument.
+    function stripChar(string, char) {
+        let newString = []
+        let manipString = string.split('')
+        for (let index in manipString) {
+            let char2 = manipString[index]
+            if (char2 !== char) {
+                newString[newString.length] = char2
+            }
+        }
+        return newString.join('')
     }
 
     // 👉 CHALLENGE 9
@@ -186,8 +200,14 @@
     // getProps({ lastName: "Smith", age: 35 }) // should return ["lastName"]
     // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
     // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
-    function getProps() {
-
+    function getProps(object) {
+        let result = []
+        for (let key in object) {
+            if (key !== 'age' && key !== 'married') {
+                result[result.length] = key
+            }
+        }
+        return result
     }
 
     // 🧪 TESTS, do not work below this line
